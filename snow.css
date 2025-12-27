@@ -1,0 +1,41 @@
+/* snow.css - 纯 CSS 下雪效果 */
+
+/* 雪花层 1 - 小雪花 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='1.5' fill='rgba(255,255,255,0.8)'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  animation: snow1 8s linear infinite;
+}
+
+/* 雪花层 2 - 大雪花 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99998;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='2' fill='rgba(255,255,255,0.6)'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  animation: snow2 12s linear infinite;
+}
+
+@keyframes snow1 {
+  0% { background-position: 0 -100vh, 40px -100vh; }
+  100% { background-position: 40px 100vh, 80px 100vh; }
+}
+
+@keyframes snow2 {
+  0% { background-position: 0 -100vh; }
+  100% { background-position: 60px 100vh; }
+}
